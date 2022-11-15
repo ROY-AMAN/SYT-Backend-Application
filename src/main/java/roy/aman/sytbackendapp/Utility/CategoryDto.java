@@ -13,11 +13,11 @@ import javax.validation.constraints.Size;
 @NoArgsConstructor
 public class CategoryDto {
 
-    private Integer categoryId;
     @NotNull
     @Size( min = 3, message = "Title should be at least 3 letter")
     private String categoryTitle;
     @NotNull()
     private String categoryDescription;
 
+    
 }

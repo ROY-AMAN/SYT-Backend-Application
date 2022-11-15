@@ -7,6 +7,9 @@ import lombok.Setter;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
 
 @Entity
 @NoArgsConstructor
@@ -21,6 +24,8 @@ public class Category {
     private String categoryTitle;
     private String categoryDescription;
 
+    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Post> posts = new ArrayList<>();
 
 
 }
